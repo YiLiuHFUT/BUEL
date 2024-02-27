@@ -35,9 +35,9 @@ def train(model, train_data, val_data, lr, epoch, weight=1, path=None):
             neg = 1.0
             for i in range(len(sample_type)):
                 if sample_type[i] == 'ben' and label[i].item() == 0:
-                    sample_weight.append(ben * neg)
+                    sample_weight.append(ben * 1)
                 elif sample_type[i] == 'ben' and label[i].item() == 1:
-                    sample_weight.append(ben * pos)
+                    sample_weight.append(ben * 1)
                 elif sample_type[i] == 'adv' and label[i].item() == 0:
                     sample_weight.append(adv * neg)
                 elif sample_type[i] == 'adv' and label[i].item() == 1:
