@@ -105,9 +105,9 @@ def train(model, train_data, test_loader_adv=None, test_loader_ben=None, num_epo
             neg = 1.0
             for i in range(len(sample_type)):
                 if sample_type[i] == 'ben' and label[i].item() == 0:
-                    sample_weight.append(ben * neg)
+                    sample_weight.append(ben * 1)
                 elif sample_type[i] == 'ben' and label[i].item() == 1:
-                    sample_weight.append(ben * pos)
+                    sample_weight.append(ben * 1)
                 elif sample_type[i] == 'adv' and label[i].item() == 0:
                     sample_weight.append(adv * neg)
                 elif sample_type[i] == 'adv' and label[i].item() == 1:
